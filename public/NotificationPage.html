@@ -1,7 +1,7 @@
 <script type="text/javascript">
       
-	var getCurrentUrl = "http://127.0.0.1:8081/get_current_url";
-	var homePageUrl = "home_page.html";
+	var getCurrentUrl = "https://igi-notifications.herokuapp.com/get_current_url";
+	var homePageUrl = "https://igi-notifications.herokuapp.com";
 	
 	var currentUrlToShow = "";
 	var noUrlFromServer = "";
@@ -54,7 +54,7 @@
 		var socket = io.connect("https://igi-notifications.herokuapp.com/"); 
 		
 		socket.on('messages_newUrlToShow', function(url) {
-				console.log("socket worked");
+				//console.log("socket worked");
                 SetCurrentUrl(url);
         });
 		

@@ -8,7 +8,7 @@ var express = require('express');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
-//var server = require('http').createServer(app);
+var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
 app.use(express.static(__dirname + '/public'));
@@ -112,7 +112,7 @@ function GetNextUrl()
 	
 }
 	
-server.listen(8081);
+server.listen(PORT);
 
 
 

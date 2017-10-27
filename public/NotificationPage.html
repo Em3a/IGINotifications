@@ -50,7 +50,8 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 		
 		<script> 
-		var socket = io.connect("http://127.0.0.1:8081"); 
+		//var socket = io.connect("http://127.0.0.1:8081"); 
+		var socket = io.connect("https://igi-notifications.herokuapp.com/"); 
 		
 		socket.on('messages_newUrlToShow', function(url) {
                 SetCurrentUrl(url);

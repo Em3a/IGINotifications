@@ -16,7 +16,7 @@ var io = require('socket.io')(server);
 var path = require("path");
 //var INDEX =  path.join(__dirname, '/public/NotificationPage.html');
 //app.use(express.static('/public/NotificationPage.html'));
-app.use((req, res) => res.sendFile(INDEX))
+//app.use((req, res) => res.sendFile(INDEX))
 app.set('view engine', 'html');
 
 app.use(express.static(__dirname + '/public'));

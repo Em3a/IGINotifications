@@ -30,6 +30,14 @@ app.get('/',function(req,res){
     res.sendFile(INDEX); 
 });
 */
+
+app.get('*', function (req, res) {
+   if (urlsToShow.includes(req.query.url))	
+   {
+	     res.sendFile(INDEX);
+   }
+});
+
 /// param ?url=
 app.get('/register', function (req, res) {
 	
@@ -40,7 +48,6 @@ app.get('/register', function (req, res) {
 		res.send('register url: ' + req.query.url);
    }
 });
-
 
 
 // param ?url=

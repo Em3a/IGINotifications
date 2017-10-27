@@ -9,36 +9,14 @@ var urlsDirectory = 'public';
 var express = require('express');
 var app = express();
 
-app.set('port', (process.env.PORT || 5000));
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
 var path = require("path");
-var INDEX =  path.join(__dirname, '/public/NotificationPage.html');
-//app.use(express.static('/public/NotificationPage.html'));
-app.use((req, res) => res.sendFile(INDEX))
+
 app.set('view engine', 'html');
 
-//app.use(express.static(__dirname + '/public'));
-//app.use(express.static(urlsDirectory));
-
-/*
-app.get('/', function(request, response) {
-  response.render('NotificationPage');
-});*/
-
-/*
-app.get('/',function(req,res){
-    res.sendFile(INDEX); 
-});
-*/
-
-app.get('/', function (req, res) {
-   if (urlsToShow.includes(req.query.url))	
-   {
-	      res.sendFile(INDEX); 
-   }
-});
+app.use(express.static(__dirname + '/public'));
 
 /// param ?url=
 app.get('/register', function (req, res) {

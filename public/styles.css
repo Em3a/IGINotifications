@@ -1,0 +1,30 @@
+h1 { 
+	color: #111; 
+	font-family: 'Helvetica Neue', sans-serif; 
+	font-size: 60px; 
+	font-weight: bold; 
+	letter-spacing: -1px;
+	line-height: 1; 
+	text-align: center; 
+	margin: 24px 24px 24px 24px;
+	color: #685206;
+	background-color:#edba2f;
+}
+	
+body
+{
+	background-color:#edba2f;
+	margin: 0 24px 24px; 
+}
+
+p { 
+color: #685206; 
+font-family: 'Helvetica Neue', sans-serif; 
+font-size: 14px;
+ line-height: 24px; 
+margin: 0 0 32px; 
+text-align: justify; 
+text-justify: inter-word; 
+color: #685206;
+background-color:#edba2f;
+}

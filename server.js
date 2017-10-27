@@ -35,6 +35,7 @@ app.get('/register', function (req, res) {
 	
    if (!urlsToShow.includes(req.query.url))	
    {
+		console.log('registered: ' + urlsToShow);
 	    urlsToShow.push(req.query.url);
 		res.send('register url: ' + req.query.url);
    }

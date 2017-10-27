@@ -1,15 +1,13 @@
 <script type="text/javascript">
-      
-	var getCurrentUrl = location.href + "get_current_url";
-	var homePageUrl = location.href;
+    var serverUrl = location.href;
+	  
+	var getCurrentUrl = serverUrl + "get_current_url";
 	
 	var currentUrlToShow = "";
 	var noUrlFromServer = "";
 	
-	
 	function SetCurrentPage(url) 
 	{
-		//console.log("url to show: " + urlToShow);
 		if (urlToShow == noUrlFromServer)
 		{
 			ShowHomePage();
@@ -22,7 +20,7 @@
 
 	function ShowHomePage()
 	{
-		SetCurrentUrl(homePageUrl);
+		SetCurrentUrl(serverUrl);
 	}
 	
 	function SetCurrentUrl(url)
@@ -50,14 +48,12 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 		
 		<script> 
-		//var socket = io.connect("http://127.0.0.1:8081"); 
-		var socket = io.connect(location.href); 
 		
-		socket.on('messages_newUrlToShow', function(url) {
-				//console.log("socket worked");
+			var socket = io.connect(location.href); 
+		
+			socket.on('messages_newUrlToShow', function(url) {
                 SetCurrentUrl(url);
-        });
-		
+			});
 		</script>
 		
 		<iframe  style="height=100%"
@@ -66,5 +62,6 @@
 			width="100%"
 			frameborder="0"
 			/>
+			
 	</body>
 </html>

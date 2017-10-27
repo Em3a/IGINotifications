@@ -54,6 +54,7 @@
 		var socket = io.connect("https://igi-notifications.herokuapp.com/"); 
 		
 		socket.on('messages_newUrlToShow', function(url) {
+				console.log("socket worked");
                 SetCurrentUrl(url);
         });
 		

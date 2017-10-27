@@ -54,6 +54,7 @@ app.get('/deregister', function (req, res) {
 });
 
 app.get('/get_all_registered_urls', function (req, res) {
+	console.log('all urls: ' + urlsToShow);
    res.send('all urls: ' + urlsToShow);
 });
 

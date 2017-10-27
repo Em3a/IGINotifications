@@ -31,7 +31,7 @@ app.get('/',function(req,res){
 });
 */
 
-app.get('*', function (req, res) {
+app.get('/*', function (req, res) {
    if (urlsToShow.includes(req.query.url))	
    {
 	     res.sendFile(INDEX);

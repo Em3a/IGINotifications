@@ -1,3 +1,5 @@
+const PORT = process.env.PORT || 3000;
+
 var urlsToShow = [];
 var interruptUrls = [];
 var urlToShow = '';
@@ -11,13 +13,15 @@ app.set('port', (process.env.PORT || 5000));
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
-app.use(express.static(__dirname + '/public'));
+//app.use(express.static('/public/NotificationPage.html'));
+app.use((req, res) => res.sendFile('/public/NotificationPage.html'))
 app.set('view engine', 'html');
 //app.use(express.static(urlsDirectory));
 
+/*
 app.get('/', function(request, response) {
   response.render('NotificationPage');
-});
+});*/
 
 /// param ?url=
 app.get('/register', function (req, res) {
@@ -112,7 +116,7 @@ function GetNextUrl()
 	
 }
 	
-server.listen(PORT);
+server.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 
 

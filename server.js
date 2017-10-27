@@ -12,9 +12,9 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
-
+var INDEX =  path.join(__dirname, '/public/NotificationPage.html');
 //app.use(express.static('/public/NotificationPage.html'));
-app.use((req, res) => res.sendFile('/public/NotificationPage.html'))
+app.use((req, res) => res.sendFile(INDEX))
 app.set('view engine', 'html');
 //app.use(express.static(urlsDirectory));
 

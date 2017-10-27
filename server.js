@@ -36,7 +36,7 @@ app.get('/',function(req,res){
 app.get('/', function (req, res) {
    if (urlsToShow.includes(req.query.url))	
    {
-	      res.render('NotificationPage.html');
+	      res.render('NotificationPage');
    }
 });
 

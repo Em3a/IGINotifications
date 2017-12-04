@@ -14,7 +14,7 @@ app.set('view engine', 'html');
 app.use(express.static(__dirname + '/public'));
 
 /// param ?url=
-app.get('/register', function (req, res) {
+app.get('/', function (req, res) {
 	
    if (!urlsToShow.includes(req.query.url))	
    {
@@ -85,6 +85,7 @@ setInterval(function () {
 }, 5000)
 
 // Keep the server alive on Heroku
+
 var http = require("http");
 setInterval(function() {
     http.get("https://igi-notifications.herokuapp.com/");

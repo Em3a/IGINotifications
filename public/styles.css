@@ -28,3 +28,7 @@ text-justify: inter-word;
 color: #685206;
 background-color:#edba2f;
 }
+
+image {
+	opacity: 0.5	
+}
